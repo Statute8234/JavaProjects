@@ -1,0 +1,65 @@
+public class Welcome {
+    public static void main(String[] args) {
+        System.out.println("Welcome to java");
+        System.out.println("Programming is fun!");
+        System.out.println("Fundamentals First");
+        System.out.println("Problem Driven");
+        System.out.print("(10.5+2*3)/(45-3.5)=");
+        System.out.print((10.5+2*3)/(45-3.5));
+        
+        System.out.println("Welcome to Java, Learning Java Now");
+        System.out.println("Programming is fun");
+        for (int i = 0; i < 5; i++) {
+            System.out.println("I love Java");
+        }
+        System.out.println("   J");
+        System.out.println("J aaa   V    vaaa");
+        System.out.println("J  J   aa   v v     a  a");
+        System.out.println("J   aaaaa    v      aaaa");
+        
+        System.out.println("a   a^2   a^3   a^4");
+        System.out.println("1    1      1    1");
+        System.out.println("2    4      8    16");
+        System.out.println("3    9      27   81");
+        System.out.println("4    16     64   256");
+        
+        System.out.println((7.5*6.5-4.5*3)/(47.5-5.5));
+        System.out.println(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10);
+        System.out.println(4 * (1-1/3+1/5-1/7+1/9-1/11));
+        System.out.println(4 * (1.0-1.0/3+1.0/5-1.0/7+1.0/9-1.0/11+1.0/13));
+        double number1 = (2*6.5)*3.14159;
+        System.out.println("perimeter = " + number1);
+        double number2 = 6.5*6.5*3.14159;
+        System.out.println("area = " + number2);
+        
+        double number3 = 2*(5.3*8.6);
+        System.out.println("perimeter = " + number3);
+        double number4 = 2*(5.3+8.6);
+        System.out.println("area = " + number4);
+        
+        int kilometers = 15;
+        double miles = kilometers / 1.6;
+        double totalMinutes = 50.0 + 30.0 / 60.0;
+        double hours = totalMinutes / 60.0;
+        double averageSpeed = miles / hours;
+        System.out.println("Average speed: " + averageSpeed + " miles per hour");
+        
+        long currentPopulation = 312032486L;
+        int secoundsPerYear = 365 * 24 * 60 * 60;
+        int birthsPerYear = secoundsPerYear / 7;
+        int deathsPerYear = secoundsPerYear / 13;
+        int immigrantsPerYear = secoundsPerYear / 45;
+        for (int i = 1; i <= 5; i++) {
+            currentPopulation += birthsPerYear - deathsPerYear + immigrantsPerYear;
+            System.out.println("Year " + i + ": " + currentPopulation + " people");
+        }
+        
+        int miles1 = 24;
+        double kilometers1 = miles1 * 1.6;
+        double totalMinutes1 = 40.0 + 35.0 / 60.0;
+        double hours1 = totalMinutes1 / 60.0;
+        double averageSpeed1 = kilometers1 / hours1;
+        System.out.println("Average speed: " + averageSpeed1 + " miles per hour");
+    }
+}
+
