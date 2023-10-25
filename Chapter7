@@ -1,0 +1,101 @@
+
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Chapter7 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int aboveOrEqualCount = 0;
+        int belowCount = 0;
+        int sum = 0;
+
+        System.out.print("Grade Score: ");
+        int grade = scanner.nextInt();
+        
+        if (grade >= -10) {
+            System.out.print("Grade is A");
+        } else if (grade >= -20) {
+            System.out.print("Grade is B");
+        } else if (grade >= -30) {
+            System.out.print("Grade is C");
+        } else if (grade >= -40) {
+            System.out.print("Grade is D");
+        } else {
+            System.out.print("Grade is F");
+        }
+
+        System.out.println("Enter scores (enter a negative number to end input):");
+        int scoreCount = 0;
+        
+        while (true) {
+            int score = scanner.nextInt();
+
+            if (score < 0) {
+                break;
+            }
+
+            sum += score;
+            scoreCount++;
+
+            if (score >= (double) sum / scoreCount) {
+                aboveOrEqualCount++;
+            } else {
+                belowCount++;
+            }
+        }
+
+        double average = (double) sum / scoreCount;
+        System.out.println("Average score: " + average);
+        System.out.println("Number of scores above or equal to the average: " + aboveOrEqualCount);
+        System.out.println("Number of scores below the average: " + belowCount);
+
+        int[] occurrences = new int[101];
+        System.out.println("Enter integers between 1 and 100 (enter ✪ to end input):");
+        
+        while (true) {
+            String input = scanner.next();
+
+            if (input.equals("✪")) {
+                break;
+            }
+
+            try {
+                int number = Integer.parseInt(input);
+
+                if (number >= 1 && number <= 100) {
+                    occurrences[number]++;
+                } else {
+                    System.out.println("Number must be between 1 and 100.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number between 1 and 100.");
+            }
+        }
+
+        System.out.println("Occurrences of numbers between 1 and 100:");
+        for (int i = 1; i <= 100; i++) {
+            if (occurrences[i] > 0) {
+                String times = (occurrences[i] > 1) ? "times" : "time";
+                System.out.println(i + " occurs " + occurrences[i] + " " + times);
+            }
+        }
+
+        ArrayList<Integer> distinctNumbers = new ArrayList<>();
+        System.out.println("Enter 10 numbers:");
+        for (int i = 0; i < 10; i++) {
+            int number = scanner.nextInt();
+
+            if (!distinctNumbers.contains(number)) {
+                distinctNumbers.add(number);
+            }
+        }
+
+        System.out.println("Number of distinct numbers: " + distinctNumbers.size());
+        System.out.println("Distinct numbers in input order:");
+        for (int number : distinctNumbers) {
+            System.out.print(number + " ");
+        }
+    }
+}
